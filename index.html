@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to do  </title>
+
+    <link rel="stylesheet" href="main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Tasks to do</h1>
+      <form id="task-form">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="what are you planning to do?"
+        />
+        <button id="task-submit" type="submit">add task</button>
+      </form>
+    </header>
+
+    <main>
+      <section class="task-list">
+        <h2>Tasks</h2>
+
+        <div id="tasks">
+          <div class="task">
+            <div class="content">
+              <input type="text" class="text" value="My task" readonly />
+            </div>
+            <div class="actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
