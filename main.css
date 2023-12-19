@@ -114,6 +114,12 @@ main{
   width: 100%;
   display: block;
   transition: 0.4s;
+  cursor: pointer;
+}
+
+#tasks .task .content .text.checked{
+  color: #ffffff;
+  text-decoration: line-through;
 }
 
 #tasks .task .content .text:not(:read-only){
