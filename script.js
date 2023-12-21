@@ -35,7 +35,10 @@ window.addEventListener('load',()=>{
     
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
-    deleteButton.innerText = 'Delete';
+    const deleteIcon = document.createElement('i');
+    deleteIcon.classList.add('fa-solid fa-delete-left');
+    deleteIcon.style.color = "crimson";
+    deleteButton.appendChild(deleteIcon);
     
     actions.appendChild(editButton);
     actions.appendChild(deleteButton);
