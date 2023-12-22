@@ -9,8 +9,7 @@ window.addEventListener('load',()=>{
     if (taskInput.value == '') {
       alert('Please enter something!');
       return;
-    }
-    console.log('here');
+    };
     const newTasks = document.createElement('div');
     newTasks.classList.add('task');
     
@@ -19,12 +18,14 @@ window.addEventListener('load',()=>{
 
     const newTasks_input = document.createElement('input');
     newTasks_input.type = 'text';
-    newTasks_input.classList.add('text')
+    newTasks_input.classList.add('text');
     newTasks_input.value = taskInput.value;
     newTasks_input.readOnly = true;
 
     newTasks_content.appendChild(newTasks_input)
     newTasks.appendChild(newTasks_content);
+
+    taskInput.value = '';
 
     const actions = document.createElement('div');
     actions.classList.add('actions');
@@ -36,14 +37,33 @@ window.addEventListener('load',()=>{
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     const deleteIcon = document.createElement('i');
-    deleteIcon.classList.add('fa-solid fa-delete-left');
+    deleteIcon.classList.add('fa-solid');
+    deleteIcon.classList.add('fa-delete-left');
     deleteIcon.style.color = "crimson";
     deleteButton.appendChild(deleteIcon);
-    
+
     actions.appendChild(editButton);
     actions.appendChild(deleteButton);
     newTasks.appendChild(actions);
 
     taskList.appendChild(newTasks);
-  })
-})
+    
+    
+    editButton.addEventListener("click", ()=>{
+      if(editButton.innerText.toLowerCase() == "edit"){
+        editButton.innerText = 'Save'
+        newTasks_input.readOnly = false;
+        newTasks_input.focus();
+      }else{
+        editButton.innerText = 'Edit'
+        newTasks_input.readOnly = true;
+      }
+    });
+    
+    deleteButton.addEventListener("click", ()=>{
+      taskList.removeChild(newTasks);
+    });
+    
+  });
+
+});
